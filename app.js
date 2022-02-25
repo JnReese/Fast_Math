@@ -7,6 +7,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
+  const secondAnimation = () => {
+    var popInSecond = document.getElementById("addSecondAnimation");
+    console.log(popInSecond);
+    popInSecond.style.display = "flex";
+    var timeoutID = window.setTimeout(() => {
+      window.clearTimeout(timeoutID);
+      popInSecond.style.display = "none";
+    }, 1000);
+  };
+
   const countDownTimer = () => {
     var countDown = document.querySelector("#countdown");
     countDown.innerHTML = 10;
@@ -51,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   };
 
-  //DOM calls
   const getNewEquation = (num1, num2) => {
     var newEqHTML = document.querySelector("#equations");
     newEqHTML.innerHTML += num1 + "+" + num2;
@@ -63,11 +72,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var currentEquation = document.getElementById("equations");
     equationAnswer = eval(currentEquation.innerHTML);
     if (equationAnswer == userAnswer) {
+      secondAnimation();
       // switch equation and add +1 second
+      var countDown = document.querySelector("#countdown");
+      countDown.innerHTML++;
       currentEquation.innerHTML = "";
       getNewEquation(getRandomInt(1, 10), getRandomInt(1, 10));
       // Score Upkeep
-      playerScore(1);
+      playerScore(addOne);
       addOne++;
     }
   };
@@ -91,5 +103,4 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   // initalize page
   getNewEquation(getRandomInt(1, 10), getRandomInt(1, 10));
-  grabCurrentEquation();
 });

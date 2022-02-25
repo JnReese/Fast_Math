@@ -39,9 +39,10 @@ body {
   display: none;
   position: absolute;
   left: 159px;
-  --fa-animation-duration: 0.6s;
-  --fa-animation-iteration-count: 1;
+  --fa-beat-fade-opacity: 0.1;
+  --fa-beat-fade-scale: 1.25;
 }
+
 @media (max-width: 1100px) {
   .card {
     margin-right: 400px;
