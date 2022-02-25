@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Math Only</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/401863d6c1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="wholeGameConatiner">
+        <div class="card">
+            <div id="scoreUpdatesContainer">
+                <p id="currentScoreTextDiv">Current score:
+                    <span id="currentScore">0</span>
+                </p>
+                <p id="highScoreTextDiv"> High Score:
+                    <span id="highScore">0</span>
+                </p>
+            </div>
+            <div id="gameContainer">
+                <div id="countdown">10</div>
+                <div id="addSecondAnimation">
+                    <span>
+                        <i class="fa-solid fa-plus fa-fade"></i>
+                        <i class="fa-solid fa-1 fa-fade"></i>
+                    </span>
+                </div>
+                <div id="secondsLeft">seconds left</div>
+                <div id="equations"></div>
+                <input id="userGameInput" placeholder="          Input Answer" type="number"></input>
+            </div>
+            <div id="buttonContainer">
+                <button id="resButton" class="button is-black">Restart</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
