@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       document.getElementById("userGameInput").disabled = false;
       var newPlaceHolder = document.getElementById("userGameInput");
       newPlaceHolder.placeholder = "Ready";
+      countDownTimer();
     }
   };
 
@@ -83,24 +84,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
       addOne++;
     }
   };
-  // set highscore and current score
-
   const playerScore = (num) => {
     var playersCurrentScore = document.getElementById("currentScore");
     playersCurrentScore.innerHTML = num;
   };
-
-  document.querySelector("#userGameInput").addEventListener("focusin", () => {
-    var newPlaceHolder = document.getElementById("userGameInput");
-    newPlaceHolder.placeholder = "Go!";
+  document.querySelector("#startButton").addEventListener("click", () => {
+    let startButton = document.querySelector("#startButton");
+    startButton.style.display = "none";
+    document.getElementById("userGameInput").disabled = false;
     countDownTimer();
   });
   document.querySelector("#resButton").addEventListener("click", resetGame);
-
   document
     .querySelector("#userGameInput")
     .addEventListener("keyup", grabCurrentEquation);
-
   // initalize page
   getNewEquation(getRandomInt(1, 10), getRandomInt(1, 10));
+  document.getElementById("userGameInput").disabled = true;
 });
